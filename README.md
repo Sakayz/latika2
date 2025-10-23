@@ -1,4 +1,7 @@
 # Proyek latika2
+Jika ingin membaca README BACA DENGAN MODE CODE JANGAN PRIVIEW AGAR TEKS MUDAH DI BACA!!!!
+
+
 NAMA : Muhamad Haikal Alfian Syah
 SEKOLAH : SMA NEGERI SENDURO 
 
