@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Downloader Tools</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<style>
+  .content {
+    padding: 20px;
+  }
+
+  .downloader-menu {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+
+  .menu-item {
+    flex: 1 1 30%;
+    min-width: 200px;
+    background: var(--card-bg);
+    color: var(--text);
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px var(--shadow);
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+  }
+
+  .menu-item:hover {
+    transform: scale(1.05);
+    background: var(--accent);
+    color: white;
+  }
+
+  .active-menu {
+    background: var(--accent);
+    color: white;
+  }
+
+  .download-form {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px var(--shadow);
+    max-width: 600px;
+    margin: 0 auto;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    animation: fadeIn 0.4s ease;
+  }
+
+  .download-form.active {
+    display: flex;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .download-form input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-family: inherit;
+  }
+
+  .download-form button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+  }
+
+  .download-form button:hover {
+    background: #1565c0;
+  }
+
+</style>
+
+<div class="container">
+  <aside class="sidebar">
+    <h2>StudentTools</h2>
+    <nav>
+      <a href="../index.html">🏠 Dashboard</a>
+      <a href="rumus.html">📘 Rumus</a>
+      <a href="perhitungan.html">🧮 Perhitungan</a>
+      <a href="resep.html">🍲 Resep</a>
+      <a href="keuangan.html">💰 Keuangan</a>
+      <a href="downloader.html" class="active">⬇️ Downloader</a>
+    </nav>
+    <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+  </aside>
+
+  <main class="content">
+    <h1>⬇️ Downloader Tools</h1>
+    <p>Pilih platform untuk mengunduh video atau audio favoritmu!</p>
+
+    <div class="downloader-menu">
+      <div id="ytMenu" class="menu-item">🎥 YouTube</div>
+      <div id="ttMenu" class="menu-item">🎵 TikTok</div>
+      <div id="igMenu" class="menu-item">📸 Instagram</div>
+    </div>
+
+    <!-- Form YouTube -->
+    <form id="ytForm" class="download-form">
+      <h3>🎥 YouTube Downloader</h3>
+      <input type="url" id="ytUrl" placeholder="Masukkan URL YouTube..." required>
+      <select id="ytFormat">
+        <option value="mp4">🎬 MP4 (Video)</option>
+        <option value="mp3">🎵 MP3 (Audio)</option>
+      </select>
+      <button type="button" onclick="downloadVideo('youtube')">Download</button>
+    </form>
+
+    <!-- Form TikTok -->
+    <form id="ttForm" class="download-form">
+      <h3>🎵 TikTok Downloader</h3>
+      <input type="url" id="ttUrl" placeholder="Masukkan URL TikTok..." required>
+      <select id="ttFormat">
+        <option value="mp4">🎬 MP4 (Video)</option>
+        <option value="mp3">🎵 MP3 (Audio)</option>
+      </select>
+      <button type="button" onclick="downloadVideo('tiktok')">Download</button>
+    </form>
+
+    <!-- Form Instagram -->
+    <form id="igForm" class="download-form">
+      <h3>📸 Instagram Downloader</h3>
+      <input type="url" id="igUrl" placeholder="Masukkan URL Instagram..." required>
+      <select id="igFormat">
+        <option value="mp4">🎬 MP4 (Video)</option>
+        <option value="mp3">🎵 MP3 (Audio)</option>
+      </select>
+      <button type="button" onclick="downloadVideo('instagram')">Download</button>
+    </form>
+  </main>
+</div>
+
+<script>
+  // Ambil elemen
+  const ytMenu = document.getElementById("ytMenu");
+  const ttMenu = document.getElementById("ttMenu");
+  const igMenu = document.getElementById("igMenu");
+
+  const ytForm = document.getElementById("ytForm");
+  const ttForm = document.getElementById("ttForm");
+  const igForm = document.getElementById("igForm");
+
+  const menus = [ytMenu, ttMenu, igMenu];
+  const forms = [ytForm, ttForm, igForm];
+
+  // Saat menu diklik
+  menus.forEach((menu, index) => {
+    menu.addEventListener("click", () => {
+      // hapus semua aktif dulu
+      menus.forEach(m => m.classList.remove("active-menu"));
+      forms.forEach(f => f.classList.remove("active"));
+
+      // aktifkan yang diklik
+      menu.classList.add("active-menu");
+      forms[index].classList.add("active"
+    )
+    });
+  });

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rumus Tools</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <style>
+    /* Rumus Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px var(--shadow);
+  margin-bottom: 30px;
+}
+
+.form input, .form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: inherit;
+}
+
+.form button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.form button:hover {
+  background: #1565c0;
+}
+
+/* List Rumus */
+.rumus-list {
+  display: grid;
+  gap: 15px;
+}
+
+.rumus-item {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px var(--shadow);
+}
+
+.rumus-item img {
+  max-width: 200px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+  </style>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>StudentTools</h2>
+      <nav>
+        <a href="../index.html">🏠 Dashboard</a>
+        <a href="rumus.html" class="active">📘 Rumus</a>
+        <a href="perhitungan.html">🧮 Perhitungan</a>
+        <a href="resep.html">🍲 Resep</a>
+        <!-- <a href="dwoanloader.html">🍲 new tols</a> -->
+        <a href="keuangan.html">💰 Keuangan</a>
+      </nav>
+      <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+    </aside>
+
+    <main class="content">
+      <h1>📘 Koleksi Rumus</h1>
+      <p>Tambahkan rumus pelajaranmu di sini agar mudah diingat!</p>
+
+      <form id="rumusForm" class="form">
+        <input type="text" id="namaRumus" placeholder="Nama Rumus (misal: Luas Segitiga)" required>
+        <input type="text" id="jenisPelajaran" placeholder="Jenis Pelajaran (misal: Matematika, Fisika)" required>
+        <textarea id="isiRumus" placeholder="Tuliskan rumus (boleh kosong jika upload gambar)" rows="3"></textarea>
+        
+        <label>📷 Upload Gambar Rumus (opsional):</label>
+        <input type="file" id="gambarRumus" accept="image/*">
+
+        <button type="submit">💾 Simpan Rumus</button>
+      </form>
+
+      <div id="daftarRumus" class="rumus-list"></div>
+    </main>
+  </div>
+
+  <script src="../script.js"></script>
+  <script src="rumus.js"></script>
+</body>
+</html>

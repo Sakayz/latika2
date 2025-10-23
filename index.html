@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>StudentTools</h2>
+      <nav>
+        <a href="#" class="active">🏠 Dashboard</a>
+        <a href="rumus.html">📘 rumus</a>
+        <a href="perhitungan.html">🧮 Perhitungan</a>
+        <a href="resep.html">🍲 Resep</a>
+        <a href="keuangan.html">💰 Keuangan</a>
+      </nav>
+      <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+    </aside>
+
+    <main class="content">
+      <h1>Dashboard</h1>
+
+      <div class="stats">
+        <div class="card">
+          <h3>Pemasukan Hari Ini</h3>
+          <p id="income">Rp 0</p>
+        </div>
+        <div class="card">
+          <h3>Pengeluaran Hari Ini</h3>
+          <p id="expense">Rp 0</p>
+        </div>
+      </div>
+
+      <div class="charts">
+        <div class="chart-container">
+          <h3>📊 Keuangan Mingguan</h3>
+          <canvas id="financeChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <h3>💻 Penggunaan Sistem</h3>
+          <canvas id="systemChart"></canvas>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
