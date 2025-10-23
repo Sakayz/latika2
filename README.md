@@ -1,6 +1,6 @@
 # Proyek latika2
 Jika ingin membaca README BACA DENGAN MODE CODE JANGAN PRIVIEW AGAR TEKS MUDAH DI BACA!!!!
-
+ 
 
 NAMA : Muhamad Haikal Alfian Syah
 SEKOLAH : SMA NEGERI SENDURO 
@@ -32,3 +32,4 @@ Handphone
 1. tahan pada gambar sampai muncul pop up
 2. open file in new tab / buka file di tab baru > melihat gambar
 3. download > menyimmpan gambaar
+4. oh iya semua items yang di dhasboard itu anya hiasan ya jadi tidak sesuai dengan yang aslinya:)
